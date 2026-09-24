@@ -1,0 +1,6 @@
+{
+  "name": "Tomori — Digital Products, Games & AI",
+  "description": "Personal portfolio and product command center for Tomori, an independent digital product builder based in Lagos, Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

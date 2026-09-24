@@ -348,6 +348,48 @@ function IdeasView() {
   );
 }
 
+function StackSection() {
+  const stack = [
+    { name: 'Claude', note: 'code + AI', icon: 'claude' },
+    { name: 'ChatGPT', note: '+ Codex', icon: 'openai' },
+    { name: 'Google AI Studio', note: 'AI builds', icon: 'googleai' },
+    { name: 'Cursor', note: 'AI editor', icon: 'cursor' },
+    { name: 'VS Code', note: 'editor', icon: 'visualstudiocode' },
+    { name: 'Photoshop', note: 'visuals', icon: 'adobephotoshop' },
+    { name: 'Python', note: 'code', icon: 'python' },
+    { name: 'JavaScript', note: 'web', icon: 'javascript' },
+    { name: 'HTML5', note: 'web', icon: 'html5' },
+    { name: 'GitHub', note: 'receipts', icon: 'github' },
+  ];
+
+  return (
+    <section className="stack-section">
+      <div className="section-heading stack-heading">
+        <span className="scribble">the tools behind the things</span>
+        <h2>THE STACK</h2>
+        <p>I use whatever helps me get the thing from idea to shipped.</p>
+      </div>
+      <div className="stack-grid">
+        {stack.map((tool, index) => (
+          <div className="stack-card" key={tool.name} style={{ transform: `rotate(${index % 3 === 0 ? -1 : index % 3 === 1 ? 1 : -0.5}deg)` }}>
+            <div className="stack-icon">
+              <img
+                src={`https://cdn.simpleicons.org/${tool.icon}`}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <strong>{tool.name}</strong>
+              <span>{tool.note}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function AboutView() {
   return (
     <div className="page interior-page">
@@ -366,6 +408,7 @@ function AboutView() {
           </div>
         </div>
       </section>
+      <StackSection />
       <DirectChannels />
       <section className="contact-paper section-shell">
         <span className="scribble">got something worth making?</span>

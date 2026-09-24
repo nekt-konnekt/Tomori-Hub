@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Project } from '../data/projects';
-import { ExternalLink, Play, RotateCcw, Check, Sparkles, Send, ShieldCheck, UserCheck } from 'lucide-react';
+import { ExternalLink, Play, RotateCcw, Check, Sparkles, Send, ShieldCheck, UserCheck, CheckCircle2 } from 'lucide-react';
 
 interface ShowcaseProps {
   project: Project;
@@ -365,6 +365,242 @@ export function AgbaVisual({ large = false }: { large?: boolean }) {
   );
 }
 
+export function WhoKnowsNaijaVisual({ large = false }: { large?: boolean }) {
+  const [tab, setTab] = useState<'trivia' | 'modes' | 'leaderboard' | 'map'>('trivia');
+  const [selectedAnswer, setSelectedAnswer] = useState<string>('A');
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+
+  const questions = [
+    {
+      q: 'What is the special dry powdered spice blend used to coat and season traditional Suya called?',
+      options: [
+        { key: 'A', text: 'Yaji', correct: true },
+        { key: 'B', text: 'Iru', correct: false },
+        { key: 'C', text: 'Ogbono', correct: false },
+        { key: 'D', text: 'Curry', correct: false },
+      ],
+      points: '+76 pts',
+      fact: 'True story: Yaji (also called Suya pepper) is an aromatic blend of ground kuli-kuli (roasted peanut cake), ginger, chili pepper, garlic, and bouillon.',
+    },
+    {
+      q: "In Nigerian street slang, when someone says they are suffering from 'Sapa', what do they mean?",
+      options: [
+        { key: 'A', text: 'They are sick with flu', correct: false },
+        { key: 'B', text: 'They are stuck in traffic', correct: false },
+        { key: 'C', text: 'They are very sleepy', correct: false },
+        { key: 'D', text: 'They are completely broke / lacking money', correct: true },
+      ],
+      points: '+82 pts',
+      fact: "Originating in Nigerian pidgin, 'Sapa' depicts severe financial lack or brokenness, often celebrated humorously in Afrobeats & memes.",
+    },
+  ];
+
+  const currentQ = questions[currentQuestionIndex];
+
+  return (
+    <div className={`showcase-container naija-theme ${large ? 'showcase-large' : ''}`}>
+      <div className="showcase-topbar dark-topbar">
+        <div className="showcase-dots">
+          <span className="dot red" />
+          <span className="dot yellow" />
+          <span className="dot green" />
+        </div>
+        <div className="showcase-url-pill dark-pill">who-knows-naija.vercel.app</div>
+        <div className="showcase-tab-pills dark-tabs">
+          <button
+            type="button"
+            className={tab === 'trivia' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('trivia'); }}
+          >
+            Trivia
+          </button>
+          <button
+            type="button"
+            className={tab === 'modes' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('modes'); }}
+          >
+            Modes
+          </button>
+          <button
+            type="button"
+            className={tab === 'leaderboard' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('leaderboard'); }}
+          >
+            Ranks
+          </button>
+          <button
+            type="button"
+            className={tab === 'map' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('map'); }}
+          >
+            36 States
+          </button>
+        </div>
+      </div>
+
+      <div className="showcase-screen naija-screen">
+        {tab === 'trivia' && (
+          <div className="naija-trivia-flow">
+            <div className="trivia-meta-bar">
+              <span className="trivia-badge">QUESTION {currentQuestionIndex + 1}/10</span>
+              <button
+                type="button"
+                className="trivia-switch-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  const next = (currentQuestionIndex + 1) % questions.length;
+                  setCurrentQuestionIndex(next);
+                  setSelectedAnswer(next === 0 ? 'A' : 'D');
+                }}
+              >
+                Next Q ↻
+              </button>
+            </div>
+
+            <h4 className="trivia-question">{currentQ.q}</h4>
+
+            <div className="trivia-options-grid">
+              {currentQ.options.map((opt) => {
+                const isSelected = selectedAnswer === opt.key;
+                return (
+                  <button
+                    key={opt.key}
+                    type="button"
+                    className={`trivia-opt-btn ${isSelected ? (opt.correct ? 'opt-correct' : 'opt-wrong') : ''}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setSelectedAnswer(opt.key);
+                    }}
+                  >
+                    <span className="opt-key">{opt.key}</span>
+                    <span className="opt-text">{opt.text}</span>
+                    {isSelected && opt.correct && <CheckCircle2 size={13} className="opt-icon" />}
+                  </button>
+                );
+              })}
+            </div>
+
+            {selectedAnswer && (
+              <div className="trivia-feedback-box">
+                <div className="feedback-head">
+                  <span className="feedback-badge">🎉 Oya take your flowers! Perfect answer.</span>
+                  <span className="feedback-points">{currentQ.points}</span>
+                </div>
+                <p className="feedback-fact">{currentQ.fact}</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {tab === 'modes' && (
+          <div className="naija-modes-flow">
+            <div className="player-badge">
+              <span className="player-avatar">🌿</span>
+              <div>
+                <strong>TomoriK</strong>
+                <small>“Who Send You? 😂” • High Score: 920</small>
+              </div>
+              <span className="status-pill">ONLINE</span>
+            </div>
+
+            <div className="mode-cards-stack">
+              <div className="mode-card highlight">
+                <span className="mode-icon">▶</span>
+                <div>
+                  <strong>PLAY NOW (10 QUESTIONS)</strong>
+                  <small>Fast-paced random Nigerian trivia</small>
+                </div>
+              </div>
+              <div className="mode-card">
+                <span className="mode-icon text-cyan-400">⚔️</span>
+                <div>
+                  <strong>1V1 LIVE ARENA</strong>
+                  <small>Real-time multiplayer duel with friends</small>
+                </div>
+              </div>
+              <div className="mode-card">
+                <span className="mode-icon text-amber-400">🗺️</span>
+                <div>
+                  <strong>36 STATES CONQUEST</strong>
+                  <small>Interactive map • Conquer all 36 states!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tab === 'leaderboard' && (
+          <div className="naija-ranks-flow">
+            <div className="ranks-header">
+              <div>
+                <strong>National Leaderboard</strong>
+                <small>Real-time Nigerian Trivia Masters</small>
+              </div>
+              <span className="live-firestore-pill">🟢 LIVE FIRESTORE</span>
+            </div>
+
+            <div className="ranks-list">
+              <div className="rank-item gold">
+                <span className="rank-num">1</span>
+                <div>
+                  <strong>Babatunde_O</strong>
+                  <small>Naija Legend • National Master</small>
+                </div>
+                <b className="rank-pts">980 PTS</b>
+              </div>
+              <div className="rank-item silver">
+                <span className="rank-num">2</span>
+                <div>
+                  <strong>Chisom_K</strong>
+                  <small>Naija Legend • Anambra Champ</small>
+                </div>
+                <b className="rank-pts">960 PTS</b>
+              </div>
+              <div className="rank-item bronze">
+                <span className="rank-num">3</span>
+                <div>
+                  <strong>Chidi_Lagos</strong>
+                  <small>Naija Legend • Lagos Rep</small>
+                </div>
+                <b className="rank-pts">940 PTS</b>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tab === 'map' && (
+          <div className="naija-map-flow">
+            <div className="map-stats-strip">
+              <span>🗺️ <b>12 / 37</b> States Conquered</span>
+              <span>⭐ <b>36</b> Stars</span>
+            </div>
+            <div className="zone-tags-row">
+              <span className="zone-tag active">South West (6/6)</span>
+              <span className="zone-tag">South East (3/5)</span>
+              <span className="zone-tag">North Central (2/6)</span>
+            </div>
+            <div className="mini-nigeria-map">
+              <div className="map-grid-layer" />
+              <div className="state-radar-dot lagos pulse" title="Lagos • Conquered">LAGOS</div>
+              <div className="state-radar-dot abuja pulse" title="Abuja FCT">ABUJA</div>
+              <div className="state-radar-dot kano" title="Kano">KANO</div>
+              <div className="state-radar-dot enugu" title="Enugu">ENUGU</div>
+              <div className="state-radar-dot rivers" title="Rivers">PH</div>
+              <span className="ocean-label">GULF OF GUINEA / ATLANTIC OCEAN</span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="showcase-live-badge dark-badge">
+        <span className="live-dot lime-dot" /> RECORDED LIVE AT WHO-KNOWS-NAIJA.VERCEL.APP
+      </div>
+    </div>
+  );
+}
+
 export function ProjectShowcaseVisual({ project, large = false }: ShowcaseProps) {
   if (project.slug === 'iyali') {
     return <IyaliVisual large={large} />;
@@ -374,6 +610,9 @@ export function ProjectShowcaseVisual({ project, large = false }: ShowcaseProps)
   }
   if (project.slug === 'agba') {
     return <AgbaVisual large={large} />;
+  }
+  if (project.slug === 'who-knows-naija') {
+    return <WhoKnowsNaijaVisual large={large} />;
   }
   return null;
 }

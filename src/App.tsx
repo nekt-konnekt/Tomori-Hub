@@ -25,7 +25,7 @@ const accentFor: Record<string, string> = {
   'construct-by-agba': 'yellow',
 };
 
-const featured = ['iyali', 'ibere', 'agba', 'danfo-rush'];
+const featured = ['iyali', 'ibere', 'agba', 'who-knows-naija'];
 const productSlugs = ['ibere', 'agba', 'iyali', 'notify', 'konnekt', 'oga-at-dtop', 'nektbooks'];
 const gameSlugs = ['oga-landlord', 'who-knows-naija', 'danfo-rush'];
 const experimentSlugs = ['makiva', 'spacia', 'dieselguard', 'kinetix', 'construct-by-agba'];
@@ -61,7 +61,7 @@ function PaperTag({ children, tone = 'yellow', rotate = 0 }: { children: React.R
 function ProjectVisual({ project, large = false }: { project: Project; large?: boolean }) {
   const tone = accentFor[project.slug] || 'turquoise';
 
-  if (['iyali', 'ibere', 'agba'].includes(project.slug)) {
+  if (['iyali', 'ibere', 'agba', 'who-knows-naija'].includes(project.slug)) {
     return (
       <div className={`project-visual tone-${tone} ${large ? 'project-visual-large' : ''}`}>
         <div className="tape tape-a" />

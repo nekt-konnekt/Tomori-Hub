@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background neon lime gradient matching Image 1 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a8eb2c" />
+      <stop offset="50%" stop-color="#9ce31e" />
+      <stop offset="100%" stop-color="#8cd515" />
+    </linearGradient>
+
+    <!-- Studio green rim light -->
+    <linearGradient id="greenRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c6f74a" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3d2b24" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Shirt gradient -->
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#697177" />
+      <stop offset="100%" stop-color="#4d5358" />
+    </linearGradient>
+
+    <!-- Glasses lens reflection -->
+    <linearGradient id="lensGleam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#bef264" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="500" height="500" fill="url(#bgGrad)" />
+
+  <!-- Subtle studio vignette / backlight -->
+  <circle cx="280" cy="220" r="220" fill="#bbf43d" opacity="0.35" filter="blur(20px)" />
+
+  <!-- Group for Tomori portrait matching Image 1 profile -->
+  <g transform="translate(10, 20)">
+    <!-- Shoulders / T-shirt (grey crewneck) -->
+    <path d="M 60 500 C 70 410 110 370 200 365 C 235 363 265 363 300 365 C 380 370 420 410 440 500 Z" fill="url(#shirtGrad)" />
+    <!-- T-shirt collar -->
+    <path d="M 195 365 C 220 388 280 388 305 365 C 290 380 210 380 195 365 Z" fill="#3a3e42" />
+
+    <!-- Neck with green rim lighting -->
+    <path d="M 195 320 C 195 370 200 375 220 378 L 285 378 C 300 375 305 360 305 320 Z" fill="#3a2a24" />
+    <!-- Neck shadow under jaw -->
+    <path d="M 195 315 C 230 345 280 335 305 315 L 305 330 C 270 350 220 350 195 330 Z" fill="#261b17" opacity="0.7" />
+
+    <!-- Head / Cranium -->
+    <path d="M 190 200 C 180 110 240 60 310 60 C 375 60 415 110 415 200 C 415 285 375 340 310 340 C 240 340 195 285 190 200 Z" fill="#3f2e27" />
+
+    <!-- Hair (short cropped buzzcut) -->
+    <path d="M 190 190 C 185 115 235 60 310 60 C 375 60 415 110 415 185 C 405 140 360 85 305 85 C 245 85 198 135 190 190 Z" fill="#181312" />
+
+    <!-- Ear (left side visible with green rim) -->
+    <ellipse cx="192" cy="225" rx="20" ry="28" fill="#44322a" />
+    <ellipse cx="192" cy="225" rx="14" ry="20" fill="#2d1f1a" />
+    <path d="M 180 210 C 180 195 190 210 190 235 C 190 250 180 245 180 235 Z" fill="#9de31e" opacity="0.6" />
+
+    <!-- Head shading / 3/4 turn towards right -->
+    <!-- Forehead highlight -->
+    <ellipse cx="320" cy="140" rx="45" ry="35" fill="#543e35" opacity="0.5" />
+    <!-- Cheekbone highlight -->
+    <ellipse cx="335" cy="235" rx="35" ry="25" fill="#523d34" opacity="0.6" />
+    <!-- Temple green rim light -->
+    <path d="M 192 140 C 198 100 230 75 270 70 C 250 78 215 105 205 145 Z" fill="#bcf538" opacity="0.75" />
+
+    <!-- Glasses (bold round frames) -->
+    <!-- Frame - Left Eye (slightly angled) -->
+    <circle cx="265" cy="195" r="38" fill="none" stroke="#161616" stroke-width="8" />
+    <circle cx="265" cy="195" r="34" fill="url(#lensGleam)" />
+    <!-- Eye inside left lens -->
+    <ellipse cx="268" cy="195" rx="14" ry="9" fill="#1b1411" />
+    <circle cx="270" cy="194" r="5" fill="#ffffff" opacity="0.8" />
+
+    <!-- Bridge of glasses -->
+    <path d="M 303 188 C 315 180 328 180 340 188" fill="none" stroke="#161616" stroke-width="7" stroke-linecap="round" />
+
+    <!-- Frame - Right Eye -->
+    <circle cx="372" cy="195" r="38" fill="none" stroke="#161616" stroke-width="8" />
+    <circle cx="372" cy="195" r="34" fill="url(#lensGleam)" />
+    <!-- Eye inside right lens -->
+    <ellipse cx="375" cy="195" rx="13" ry="8" fill="#1b1411" />
+    <circle cx="377" cy="194" r="5" fill="#ffffff" opacity="0.8" />
+
+    <!-- Glasses temple arm to ear -->
+    <path d="M 230 190 L 195 210" fill="none" stroke="#161616" stroke-width="6" stroke-linecap="round" />
+    <!-- Green reflection on glasses rim -->
+    <path d="M 235 175 C 250 162 280 162 295 175" fill="none" stroke="#bcf538" stroke-width="3" opacity="0.8" />
+    <path d="M 345 175 C 360 162 390 162 405 175" fill="none" stroke="#bcf538" stroke-width="3" opacity="0.8" />
+
+    <!-- Nose (3/4 perspective) -->
+    <path d="M 326 195 L 340 245 C 330 252 355 255 352 245 Z" fill="#2d1f1a" />
+    <ellipse cx="340" cy="245" rx="9" ry="6" fill="#1f1512" />
+
+    <!-- Lips / Mouth -->
+    <path d="M 325 278 C 342 272 360 272 372 280 C 358 288 335 288 325 278 Z" fill="#2a1b16" />
+    <path d="M 328 285 C 345 292 362 292 370 285 C 360 295 338 295 328 285 Z" fill="#1d1310" />
+
+    <!-- Full Beard with prominent white/salt-and-pepper chin whiskers from Image 1 -->
+    <!-- Base dark beard -->
+    <path d="M 195 235 C 205 310 240 335 310 338 C 375 338 405 300 405 255 C 395 262 375 262 355 262 C 345 262 320 265 315 262 C 300 275 255 275 240 260 C 220 260 205 250 195 235 Z" fill="#1d1715" />
+    <!-- Mustache -->
+    <path d="M 315 265 C 335 258 365 258 382 268 C 365 275 335 275 315 265 Z" fill="#1a1412" />
+
+    <!-- Salt and Pepper / White Beard details on the chin (key feature in Image 1!) -->
+    <!-- Dense white and silver hairs -->
+    <path d="M 300 315 C 315 335 345 335 365 315 C 360 330 320 338 300 315 Z" fill="#e5e7eb" opacity="0.9" />
+    <!-- Individual whisker streaks for realism -->
+    <g stroke="#f3f4f6" stroke-width="2.5" stroke-linecap="round" opacity="0.95">
+      <line x1="315" y1="310" x2="313" y2="330" />
+      <line x1="322" y1="312" x2="320" y2="334" />
+      <line x1="328" y1="314" x2="327" y2="337" />
+      <line x1="334" y1="315" x2="335" y2="339" />
+      <line x1="340" y1="315" x2="343" y2="338" />
+      <line x1="347" y1="313" x2="352" y2="335" />
+      <line x1="354" y1="311" x2="359" y2="330" />
+      <line x1="360" y1="308" x2="365" y2="325" />
+    </g>
+    <!-- Secondary silver/grey layer -->
+    <g stroke="#9ca3af" stroke-width="2" stroke-linecap="round" opacity="0.8">
+      <line x1="308" y1="305" x2="306" y2="322" />
+      <line x1="318" y1="302" x2="315" y2="320" />
+      <line x1="330" y1="305" x2="330" y2="328" />
+      <line x1="342" y1="303" x2="345" y2="325" />
+      <line x1="350" y1="304" x2="355" y2="323" />
+      <line x1="365" y1="295" x2="370" y2="315" />
+      <line x1="372" y1="288" x2="376" y2="305" />
+    </g>
+
+    <!-- Sideburns / Jawline green ambient light from studio background -->
+    <path d="M 195 240 C 200 290 230 325 280 338 C 260 330 220 295 210 240 Z" fill="#9fe620" opacity="0.45" />
+  </g>
+</svg>

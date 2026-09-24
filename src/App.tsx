@@ -211,7 +211,23 @@ function HomeView() {
       <section className="about-strip section-shell">
         <div className="section-label"><span>WHAT'S UP</span><PaperTag tone="pink" rotate={2}>CURRENTLY BUILDING</PaperTag></div>
         <div className="about-collage">
-          <div className="photo-frame fake-photo portrait-photo"><div>T</div><span>lagos / 2026</span></div>
+          <div className="photo-frame fake-photo portrait-photo">
+            <img
+              src="/tomori.jpg"
+              alt="Tomori Olakunle"
+              loading="eager"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes('googleusercontent.com')) {
+                  target.src = 'https://lh3.googleusercontent.com/d/1zrkP8o_u0cF3lFJ9UvSvCF3EIrVwP6JP';
+                } else if (!target.src.endsWith('/tomori-portrait.svg')) {
+                  target.src = '/tomori-portrait.svg';
+                }
+              }}
+            />
+            <span>lagos / 2026</span>
+          </div>
           <div className="about-copy">
             <h2>I like making complicated things feel playable.</h2>
             <p>I started around product, operations and business systems. These days I'm increasingly interested in games, AI-assisted development and shipping strange little products that solve real problems.</p>

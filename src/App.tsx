@@ -3,6 +3,7 @@ import { ArrowUp, Github, Mail, MessageCircle } from 'lucide-react';
 import { INITIAL_PROJECTS, Project } from './data/projects';
 import { SEOHead } from './components/SEOHead';
 import { StackIcon } from './components/StackIcons';
+import { ProjectShowcaseVisual } from './components/ProjectShowcaseVisuals';
 
 type Route = '/' | '/work' | '/lab' | '/ideas' | '/about';
 
@@ -24,7 +25,7 @@ const accentFor: Record<string, string> = {
   'construct-by-agba': 'yellow',
 };
 
-const featured = ['danfo-rush', 'iyali', 'ibere', 'who-knows-naija'];
+const featured = ['iyali', 'ibere', 'agba', 'danfo-rush'];
 const productSlugs = ['ibere', 'agba', 'iyali', 'notify', 'konnekt', 'oga-at-dtop', 'nektbooks'];
 const gameSlugs = ['oga-landlord', 'who-knows-naija', 'danfo-rush'];
 const experimentSlugs = ['makiva', 'spacia', 'dieselguard', 'kinetix', 'construct-by-agba'];
@@ -59,6 +60,18 @@ function PaperTag({ children, tone = 'yellow', rotate = 0 }: { children: React.R
 
 function ProjectVisual({ project, large = false }: { project: Project; large?: boolean }) {
   const tone = accentFor[project.slug] || 'turquoise';
+
+  if (['iyali', 'ibere', 'agba'].includes(project.slug)) {
+    return (
+      <div className={`project-visual tone-${tone} ${large ? 'project-visual-large' : ''}`}>
+        <div className="tape tape-a" />
+        <div className="tape tape-b" />
+        <ProjectShowcaseVisual project={project} large={large} />
+        <span className="scribble visual-note">LIVE REEL</span>
+      </div>
+    );
+  }
+
   return (
     <div className={`project-visual tone-${tone} ${large ? 'project-visual-large' : ''}`}>
       <div className="tape tape-a" />

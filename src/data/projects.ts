@@ -13,9 +13,9 @@ export interface Project {
 }
 
 export const INITIAL_PROJECTS: Project[] = [
-  { slug:'ibere', name:'Ibere.work', description:'Employee onboarding platform.', category:'Product', status:'Active / Live', url:'https://ibere.work', domain:'ibere.work' },
-  { slug:'agba', name:'Agba.work', description:'AI Executive Director.', category:'Product', status:'Active / Experiment', url:'https://agba.work', domain:'agba.work' },
-  { slug:'iyali', name:'Iyali.work', description:'Digital Family Heritage Platform.', category:'Product', status:'Active / Live', url:'https://iyali.work', domain:'iyali.work' },
+  { slug:'iyali', name:'Iyali.work', description:'Conversational family history & lineage builder. Capturing stories, oral traditions, and kinship relationships on an interactive canvas.', category:'Product', status:'Active / Live', url:'https://iyali.work', domain:'iyali.work' },
+  { slug:'ibere', name:'Ibere.work', description:'Run employee onboarding through Telegram. Set up workflows, invite hires via chat links, and eliminate HR chasing before Day 1.', category:'Product', status:'Active / Live', url:'https://ibere.work', domain:'ibere.work' },
+  { slug:'agba', name:'Agba.work', description:'Executive intelligence for growing businesses. Connects signals across operations, sales, and finance into daily briefs before issues escalate.', category:'Product', status:'Active / Live', url:'https://agba.work', domain:'agba.work' },
   { slug:'notify', name:'Notify.i.ng', description:'Condolences and obituaries.', category:'Product', status:'Active / Product', url:'https://notify.i.ng', domain:'notify.i.ng' },
   { slug:'konnekt', name:'Konnekt.ng', description:'Leads and business identity.', category:'Product', status:'Product', url:'https://konnekt.ng', domain:'konnekt.ng' },
   { slug:'makiva', name:'Makiva.work', description:'Prototype. Currently houses no meaningful product functionality.', category:'Experiment', status:'Prototype', url:'https://makiva.work', domain:'makiva.work' },

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowUp, Github, Mail, MessageCircle } from 'lucide-react';
 import { INITIAL_PROJECTS, Project } from './data/projects';
 import { SEOHead } from './components/SEOHead';
+import { StackIcon } from './components/StackIcons';
 
 type Route = '/' | '/work' | '/lab' | '/ideas' | '/about';
 
@@ -393,20 +394,20 @@ function IdeasView() {
 
 function StackSection() {
   const stack = [
-    { name: 'Claude', note: 'code + AI', icon: 'claude' },
-    { name: 'ChatGPT', note: '+ Codex', icon: 'openai' },
-    { name: 'Google AI Studio', note: 'AI builds', icon: 'googleai' },
-    { name: 'Cursor', note: 'AI editor', icon: 'cursor' },
-    { name: 'VS Code', note: 'editor', icon: 'visualstudiocode' },
-    { name: 'Photoshop', note: 'visuals', icon: 'adobephotoshop' },
-    { name: 'Python', note: 'code', icon: 'python' },
-    { name: 'JavaScript', note: 'web', icon: 'javascript' },
-    { name: 'HTML5', note: 'web', icon: 'html5' },
-    { name: 'GitHub', note: 'receipts', icon: 'github' },
+    { name: 'Claude', note: 'code + AI' },
+    { name: 'ChatGPT', note: '+ Codex' },
+    { name: 'Google AI Studio', note: 'AI builds' },
+    { name: 'Cursor', note: 'AI editor' },
+    { name: 'VS Code', note: 'editor' },
+    { name: 'Photoshop', note: 'visuals' },
+    { name: 'Python', note: 'code' },
+    { name: 'JavaScript', note: 'web' },
+    { name: 'HTML5', note: 'web' },
+    { name: 'GitHub', note: 'receipts' },
   ];
 
   return (
-    <section className="stack-section">
+    <section className="stack-section section-shell">
       <div className="section-heading stack-heading">
         <span className="scribble">the tools behind the things</span>
         <h2>THE STACK</h2>
@@ -416,11 +417,7 @@ function StackSection() {
         {stack.map((tool, index) => (
           <div className="stack-card" key={tool.name} style={{ transform: `rotate(${index % 3 === 0 ? -1 : index % 3 === 1 ? 1 : -0.5}deg)` }}>
             <div className="stack-icon">
-              <img
-                src={`https://cdn.simpleicons.org/${tool.icon}`}
-                alt=""
-                loading="lazy"
-              />
+              <StackIcon name={tool.name} />
             </div>
             <div>
               <strong>{tool.name}</strong>

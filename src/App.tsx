@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowUp, Github, Mail, MessageCircle } from 'lucide-react';
 import { INITIAL_PROJECTS, Project } from './data/projects';
+import { SEOHead } from './components/SEOHead';
 
 type Route = '/' | '/work' | '/lab' | '/ideas' | '/about';
 
@@ -189,6 +190,12 @@ function HomeView() {
   const featuredProjects = featured.map(getProject).filter(Boolean) as Project[];
   return (
     <div className="page">
+      <SEOHead
+        title="Tomori — Digital Products, Games & AI | Lagos, Nigeria"
+        description="Tomori Olakunle builds digital products, arcade games, and software experiments with AI from Lagos, Nigeria. Explore live projects, games, and prototypes."
+        path="/"
+        type="website"
+      />
       <section className="hero section-shell">
         <div className="hero-note note-left"><PaperTag tone="green" rotate={-4}>MADE THINGS</PaperTag></div>
         <div className="hero-note note-right"><PaperTag tone="yellow" rotate={3}>BREAKS THINGS</PaperTag></div>
@@ -281,6 +288,18 @@ function WorkView() {
   const filtered = INITIAL_PROJECTS.filter(p => filter === 'All' || p.category === filter);
   return (
     <div className="page interior-page">
+      <SEOHead
+        title="Work & Shipped Projects | Tomori — Digital Products, Games & AI"
+        description="Archive and catalogue of software, digital products, and games built by Tomori Olakunle in Lagos, Nigeria."
+        path="/work"
+        type="website"
+        schema={{
+          '@type': 'CollectionPage',
+          name: 'Work & Projects by Tomori',
+          description: 'Archive of digital products, applications, and games.',
+          url: 'https://tomori.build/work',
+        }}
+      />
       <section className="page-intro section-shell">
         <span className="scribble">archive / catalogue / receipts</span>
         <h1>WORK</h1>
@@ -300,6 +319,18 @@ function LabView() {
   const experiments = experimentSlugs.map(getProject).filter(Boolean) as Project[];
   return (
     <div className="page interior-page">
+      <SEOHead
+        title="Lab & Game Playground | Tomori — Digital Products, Games & AI"
+        description="Experiments in AI-assisted development, Nigerian games, and interactive software prototypes built by Tomori."
+        path="/lab"
+        type="website"
+        schema={{
+          '@type': 'CollectionPage',
+          name: 'Lab & Game Playground',
+          description: 'Games and AI-assisted development experiments by Tomori Olakunle.',
+          url: 'https://tomori.build/lab',
+        }}
+      />
       <section className="page-intro section-shell lab-intro">
         <PaperTag tone="turquoise" rotate={-2}>PLAYGROUND</PaperTag>
         <span className="scribble">things get weird here</span>
@@ -328,6 +359,18 @@ function IdeasView() {
   ];
   return (
     <div className="page interior-page">
+      <SEOHead
+        title="Ideas & Public Notebook | Tomori — Digital Products, Games & AI"
+        description="Public notebook of upcoming software concepts, product ideas, and game mechanics being explored by Tomori."
+        path="/ideas"
+        type="website"
+        schema={{
+          '@type': 'CollectionPage',
+          name: 'Ideas & Public Notebook',
+          description: 'Ideas and concepts in development by Tomori Olakunle.',
+          url: 'https://tomori.build/ideas',
+        }}
+      />
       <section className="page-intro section-shell">
         <span className="scribble">public notebook / no promises</span>
         <h1>IDEAS</h1>
@@ -393,6 +436,29 @@ function StackSection() {
 function AboutView() {
   return (
     <div className="page interior-page">
+      <SEOHead
+        title="About Tomori | Independent Digital Product Builder & Game Developer"
+        description="Meet Tomori Olakunle, an independent builder from Lagos exploring AI, web development, and games. Discover his background, stack, and story."
+        path="/about"
+        type="profile"
+        schema={{
+          '@type': 'ProfilePage',
+          name: 'About Tomori Olakunle',
+          url: 'https://tomori.build/about',
+          mainEntity: {
+            '@type': 'Person',
+            name: 'Tomori Olakunle',
+            jobTitle: 'Digital Product Builder & Game Developer',
+            image: 'https://lh3.googleusercontent.com/d/1zrkP8o_u0cF3lFJ9UvSvCF3EIrVwP6JP',
+            url: 'https://tomori.build',
+            sameAs: [
+              'https://x.com/tomori_olakunle',
+              'https://github.com/nekt-konnekt',
+              'mailto:Tomoriolakunle@gmail.com',
+            ],
+          },
+        }}
+      />
       <section className="about-page section-shell">
         <span className="scribble">a little context</span>
         <h1>ABOUT</h1>
@@ -420,8 +486,29 @@ function AboutView() {
 }
 
 function ProjectDetailView({ project }: { project: Project }) {
+  const schema = {
+    '@type': project.category === 'Game' ? 'VideoGame' : 'SoftwareApplication',
+    name: project.name,
+    description: project.description,
+    applicationCategory: project.category === 'Game' ? 'GameApplication' : 'BusinessApplication',
+    operatingSystem: 'All',
+    author: {
+      '@type': 'Person',
+      name: 'Tomori Olakunle',
+      url: 'https://tomori.build',
+    },
+    url: project.url || `https://tomori.build/work/${project.slug}`,
+  };
+
   return (
     <div className="page interior-page">
+      <SEOHead
+        title={`${project.name} — ${project.category} | Tomori`}
+        description={`${project.description} Built by Tomori Olakunle in Lagos, Nigeria.`}
+        path={`/work/${project.slug}`}
+        type="article"
+        schema={schema}
+      />
       <section className={`project-detail-hero section-shell tone-${accentFor[project.slug] || 'turquoise'}`}>
         <span className="scribble">case file / {project.category.toLowerCase()}</span>
         <h1>{project.name}</h1>

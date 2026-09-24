@@ -14,21 +14,34 @@ const accentFor: Record<string, string> = {
   notify: 'blue',
   konnekt: 'green',
   'oga-at-dtop': 'yellow',
-  nektbooks: 'orange',
-  'oga-landlord': 'pink',
+  nektbooks: 'blue',
+  'oga-landlord': 'green',
   'who-knows-naija': 'blue',
-  'danfo-rush': 'turquoise',
+  'danfo-rush': 'yellow',
   makiva: 'green',
   spacia: 'blue',
   dieselguard: 'orange',
+  trustlink: 'turquoise',
   kinetix: 'pink',
   'construct-by-agba': 'yellow',
 };
 
-const featured = ['iyali', 'ibere', 'agba', 'who-knows-naija'];
-const productSlugs = ['ibere', 'agba', 'iyali', 'notify', 'konnekt', 'oga-at-dtop', 'nektbooks'];
+const featured = ['iyali', 'danfo-rush', 'oga-landlord', 'ibere', 'agba', 'who-knows-naija'];
+const productSlugs = ['ibere', 'agba', 'iyali', 'nektbooks', 'notify', 'konnekt', 'oga-at-dtop'];
 const gameSlugs = ['oga-landlord', 'who-knows-naija', 'danfo-rush'];
-const experimentSlugs = ['makiva', 'spacia', 'dieselguard', 'kinetix', 'construct-by-agba'];
+const experimentSlugs = ['trustlink', 'dieselguard', 'makiva', 'spacia', 'kinetix', 'construct-by-agba'];
+
+const SHOWCASE_SLUGS = [
+  'iyali',
+  'ibere',
+  'agba',
+  'who-knows-naija',
+  'oga-landlord',
+  'danfo-rush',
+  'trustlink',
+  'dieselguard',
+  'nektbooks',
+];
 
 function navigate(path: string) {
   window.history.pushState({}, '', path);
@@ -61,7 +74,7 @@ function PaperTag({ children, tone = 'yellow', rotate = 0 }: { children: React.R
 function ProjectVisual({ project, large = false }: { project: Project; large?: boolean }) {
   const tone = accentFor[project.slug] || 'turquoise';
 
-  if (['iyali', 'ibere', 'agba', 'who-knows-naija'].includes(project.slug)) {
+  if (SHOWCASE_SLUGS.includes(project.slug)) {
     return (
       <div className={`project-visual tone-${tone} ${large ? 'project-visual-large' : ''}`}>
         <div className="tape tape-a" />

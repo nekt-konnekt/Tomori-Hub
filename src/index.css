@@ -272,3 +272,190 @@ main>*{position:relative;z-index:1}
 .state-radar-dot.pulse{box-shadow:0 0 8px #10b981}
 .ocean-label{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;letter-spacing:.08em;color:#0d9488;opacity:.7}
 
+/* Oga Landlord Styles */
+.landlord-theme{background:#0a120e;color:#f3f4f6}
+.landlord-screen{background:#0a120e;padding:12px}
+.landlord-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.location-pill{background:#13261c;border:1px solid #166534;color:#4ade80;font-size:8px;font-weight:800;padding:2px 7px;border-radius:3px}
+.trophy-pill{background:#231a08;border:1px solid #854d0e;color:#facc15;font-size:8px;font-weight:800;padding:2px 7px;border-radius:3px}
+.compound-utilities-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px}
+.utility-card{background:#101a14;border:1px solid #1e3324;border-radius:6px;padding:7px;display:flex;flex-direction:column;gap:4px}
+.utility-head{display:flex;justify-content:space-between;align-items:center;font-size:8.5px;color:#d1d5db}
+.utility-progress-bar{height:5px;background:#1e3324;border-radius:3px;overflow:hidden}
+.utility-progress-fill.water{height:100%;background:#06b6d4;border-radius:3px;transition:width .2s}
+.utility-note{font-size:7.5px;color:#9ca3af}
+.utility-action-btn{background:#162b1e;border:1px solid #22c55e;color:#4ade80;font-size:8px;font-weight:800;padding:3px 6px;border-radius:3px;cursor:pointer;margin-top:auto}
+.utility-action-btn:hover{background:#22c55e;color:#000}
+.utility-action-btn.btn-active{background:#22c55e;color:#000}
+.compound-units-box{background:#101a14;border:1px solid #1e3324;border-radius:6px;padding:7px}
+.units-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:8px;color:#9ca3af}
+.units-title-row strong{color:#d1d5db}
+.units-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.unit-card{background:#16241c;border:1px solid #233b2a;border-radius:4px;padding:5px 7px;display:flex;align-items:center;gap:6px}
+.unit-card.vacant{border-style:dashed}
+.unit-avatar{font-size:14px;background:#1d2f23;width:24px;height:24px;border-radius:4px;display:grid;place-items:center;flex-shrink:0}
+.unit-info strong{display:block;font-size:9px;color:#f3f4f6;line-height:1.1}
+.unit-info small{font-size:7.5px;color:#9ca3af;display:block}
+.unit-badge{margin-left:auto;font-size:7.5px;font-weight:900;padding:2px 5px;border-radius:3px}
+.unit-badge.due{background:#451a03;color:#f97316;border:1px solid #9a3412}
+.unit-badge.paid{background:#064e3b;color:#34d399;border:1px solid #059669}
+.unit-badge.new{background:#1e3a8a;color:#60a5fa}
+.uncle-letter-scroll{background:#191811;border:1px solid #854d0e;border-radius:6px;padding:9px;color:#fef08a}
+.letter-kicker{font-size:7.5px;font-weight:800;letter-spacing:.08em;color:#fbbf24;display:block}
+.uncle-letter-scroll h5{font-size:11px;font-weight:800;margin:2px 0 6px;color:#fff}
+.uncle-letter-scroll blockquote{margin:0 0 8px;font-style:italic;font-size:9.5px;line-height:1.4;color:#fde68a;border-left:2px solid #fbbf24;padding-left:8px}
+.letter-footer{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#d1d5db}
+.letter-badge{background:#854d0e;color:#fff;padding:1px 5px;border-radius:2px;font-weight:700}
+.property-value-card{background:#101a14;border:1px solid #1e3324;border-radius:6px;padding:8px;margin-bottom:6px}
+.property-value-card small{font-size:7.5px;color:#9ca3af;font-weight:800}
+.value-row{display:flex;justify-content:space-between;align-items:center;margin-top:2px}
+.value-row h3{font-family:'Bowlby One SC',sans-serif;font-size:16px;color:#4ade80;margin:0}
+.value-row strong{font-size:8px;color:#9ca3af}
+.cash-pill{text-align:right}
+.cash-pill h4{font-size:13px;font-weight:900;color:#facc15;margin:0}
+.empire-metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.empire-metric{background:#101a14;border:1px solid #1e3324;border-radius:4px;padding:5px;text-align:center}
+.empire-metric small{font-size:7px;color:#9ca3af;display:block}
+.empire-metric b{font-size:9px;color:#f3f4f6}
+
+/* Danfo Rush Styles */
+.danfo-theme{background:#0e0f12;color:#f9fafb}
+.danfo-screen{background:#0e0f12;padding:10px}
+.danfo-hud-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.perk-pill{background:#112217;border:1px solid #15803d;color:#4ade80;font-size:8px;font-weight:800;padding:2px 7px;border-radius:3px;display:flex;align-items:center}
+.score-pill{display:flex;align-items:center;gap:6px;font-size:8.5px;color:#cbd5e1}
+.fare-badge{background:#854d0e;color:#fef08a;font-weight:900;font-size:8px;padding:2px 6px;border-radius:3px}
+.danfo-highway-viewport{background:linear-gradient(180deg,#1e1b4b 0%,#0f172a 40%,#09090b 100%);border:1.5px solid #334155;border-radius:6px;height:140px;position:relative;overflow:hidden}
+.skyline-dusk-glow{position:absolute;top:0;left:0;right:0;height:40px;background:radial-gradient(ellipse at 50% 0%,#f97316 0%,transparent 70%);opacity:.3}
+.highway-road{position:absolute;inset:0;perspective:160px}
+.road-lane-line{position:absolute;top:0;bottom:0;width:2px;background:repeating-linear-gradient(180deg,#fff 0 10px,transparent 10px 20px);opacity:.4}
+.road-lane-line.line-1{left:33%}
+.road-lane-line.line-2{left:66%}
+.road-obstacle{position:absolute;transform:translate(-50%,-50%);font-size:13px;z-index:2}
+.road-obstacle.coin{background:#eab308;color:#000;font-weight:900;width:14px;height:14px;border-radius:50%;display:grid;place-items:center;font-size:8px;box-shadow:0 0 6px #eab308}
+.danfo-bus-sprite{position:absolute;bottom:12px;transform:translateX(-50%);width:36px;height:52px;background:#facc15;border:2px solid #000;border-radius:4px;box-shadow:0 8px 12px rgba(0,0,0,.6);z-index:4;transition:left .18s ease-out}
+.danfo-roof-stripes{display:flex;justify-content:space-around;padding-top:4px}
+.danfo-roof-stripes span{width:4px;height:24px;background:#000}
+.danfo-windshield{width:28px;height:12px;background:#38bdf8;border:1px solid #000;margin:3px auto 0;border-radius:2px;opacity:.9}
+.danfo-bumper{background:#000;color:#fff;font-size:5.5px;font-weight:900;text-align:center;padding:1px 0;margin-top:2px}
+.danfo-controls-overlay{position:absolute;bottom:4px;left:6px;right:6px;display:flex;justify-content:space-between;gap:6px;z-index:5}
+.lane-btn{background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:8px;font-weight:800;padding:2px 8px;border-radius:3px;cursor:pointer}
+.lane-btn:hover{background:#facc15;color:#000}
+.garage-bus-card{background:#161922;border:1px solid #282f3f;border-radius:6px;padding:8px;margin-bottom:6px}
+.garage-bus-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.garage-bus-head strong{font-size:11px;color:#facc15}
+.badge-360{font-size:7.5px;color:#94a3b8;background:#1e293b;padding:1px 5px;border-radius:2px}
+.power-ratings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.rating-item{background:#1c2230;padding:4px;border-radius:3px;text-align:center}
+.rating-item small{font-size:7px;color:#94a3b8;display:block}
+.rating-item b{font-size:9.5px;color:#fff}
+.upgrade-tile{background:#161922;border:1px solid #282f3f;border-radius:6px;padding:7px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.upgrade-tile strong{font-size:9.5px;color:#f3f4f6;display:block}
+.upgrade-tile p{font-size:8px;color:#9ca3af;margin:2px 0 0}
+.danfo-upgrade-btn{background:#facc15;color:#000;font-size:8.5px;font-weight:900;padding:5px 9px;border:none;border-radius:3px;cursor:pointer;white-space:nowrap}
+.missions-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.missions-head strong{font-size:10px;color:#facc15}
+.missions-head small{font-size:7.5px;color:#9ca3af}
+.mission-items-list{display:flex;flex-direction:column;gap:4px}
+.mission-item{background:#161922;border:1px solid #282f3f;border-radius:4px;padding:5px 8px;display:flex;justify-content:space-between;align-items:center}
+.mission-item strong{font-size:8.5px;color:#f3f4f6;display:block}
+.mission-item small{font-size:7.5px;color:#9ca3af}
+.mission-claimed-pill{background:#14532d;color:#86efac;font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:3px}
+
+/* TrustLink Styles */
+.trustlink-theme{background:#fafafa;color:#18181b}
+.trustlink-screen{background:#fafafa;padding:12px}
+.vendor-card-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.vendor-avatar{width:36px;height:36px;border-radius:50%;background:#18181b;color:#fff;display:grid;place-items:center;font-weight:900;font-size:12px}
+.vendor-meta h4{font-size:13px;font-weight:900;margin:0;color:#09090b}
+.vendor-meta span{font-size:9px;color:#52525b;display:block}
+.vendor-location{font-size:8px;color:#71717a}
+.vendor-tagline{font-size:10px;color:#3f3f46;margin:0 0 8px;line-height:1.4}
+.trustlink-verified-cluster{background:#fff;border:1.5px solid #e4e4e7;border-radius:6px;padding:8px;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.cluster-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;border-bottom:1px solid #f4f4f5;padding-bottom:4px}
+.cluster-header strong{font-size:8.5px;letter-spacing:.06em;color:#27272a}
+.trust-score-badge{background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;font-size:8px;font-weight:800;padding:2px 6px;border-radius:3px}
+.verified-items-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.check-item{display:flex;align-items:flex-start;gap:6px}
+.check-item strong{font-size:9px;color:#09090b;display:block;line-height:1.1}
+.check-item small{font-size:7.5px;color:#71717a;display:block}
+.trust-metric-pill{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:9px;font-weight:800;padding:4px 8px;border-radius:4px;display:flex;align-items:center;margin-bottom:8px}
+.audit-timeline{display:flex;flex-direction:column;gap:6px}
+.audit-step{display:flex;align-items:flex-start;gap:8px;background:#fff;border:1px solid #e4e4e7;padding:6px 8px;border-radius:4px}
+.step-num{background:#18181b;color:#fff;font-size:9px;font-weight:900;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.audit-step strong{font-size:9.5px;color:#09090b;display:block}
+.audit-step small{font-size:8px;color:#71717a}
+.escrow-card{background:#f4f4f5;border:1px solid #e4e4e7;border-radius:6px;padding:10px;text-align:center}
+.escrow-badge{background:#18181b;color:#fff;font-size:8px;font-weight:800;padding:2px 6px;border-radius:2px;letter-spacing:.08em}
+.escrow-card h5{font-size:12px;font-weight:800;margin:6px 0 2px}
+.escrow-card p{font-size:9.5px;color:#52525b;margin:0 0 8px}
+.protection-pills{display:flex;justify-content:center;gap:6px}
+.protection-pills span{background:#fff;border:1px solid #d4d4d8;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px}
+
+/* DieselGuard Styles */
+.diesel-theme{background:#090b10;color:#f1f5f9}
+.diesel-screen{background:#090b10;padding:12px}
+.diesel-header-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px}
+.diesel-kicker{font-size:8px;font-weight:800;letter-spacing:.08em;color:#38bdf8}
+.diesel-title{font-size:13px;font-weight:800;margin:2px 0 0;color:#f8fafc}
+.assets-count-badge{background:#1e293b;color:#94a3b8;font-size:8px;font-weight:800;padding:2px 6px;border-radius:3px}
+.diesel-fleet-flow{display:flex;flex-direction:column;gap:6px}
+.generator-asset-card{background:#131822;border:1px solid #1e293b;border-radius:6px;padding:7px 9px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:border-color .15s}
+.generator-asset-card.selected{border-color:#38bdf8;background:#162030}
+.gen-gauge-icon{background:#1e293b;width:30px;height:30px;border-radius:6px;display:grid;place-items:center;flex-shrink:0}
+.gen-meta{flex:1}
+.gen-title-line{display:flex;justify-content:space-between;align-items:center}
+.gen-title-line strong{font-size:10.5px;color:#f8fafc}
+.status-within-range{font-size:8px;font-weight:800;color:#34d399;background:#064e3b;padding:1px 5px;border-radius:2px}
+.gen-specs{font-size:8px;color:#94a3b8;display:block}
+.gen-log-status{font-size:7.5px;color:#64748b;display:block;margin-top:1px}
+.diesel-action-row{margin-top:4px}
+.diesel-capture-btn{background:#0284c7;border:none;color:#fff;font-size:8.5px;font-weight:800;padding:5px 9px;border-radius:3px;cursor:pointer}
+.telemetry-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}
+.telemetry-stat{background:#131822;border:1px solid #1e293b;padding:6px;border-radius:4px;text-align:center}
+.telemetry-stat small{font-size:7.5px;color:#94a3b8;display:block}
+.telemetry-stat strong{font-size:12px;color:#f8fafc;display:block;margin:2px 0 1px}
+.telemetry-stat span{font-size:7.5px;color:#64748b}
+.fuel-leak-detector-banner{background:#064e3b;border:1px solid #059669;border-radius:5px;padding:7px 9px;display:flex;align-items:flex-start;gap:7px}
+.fuel-leak-detector-banner strong{font-size:9.5px;color:#6ee7b7;display:block}
+.fuel-leak-detector-banner small{font-size:8px;color:#a7f3d0;line-height:1.3;display:block}
+.quick-log-form{background:#131822;border:1px solid #1e293b;border-radius:6px;padding:9px}
+.form-kicker{font-size:8px;font-weight:800;color:#38bdf8;letter-spacing:.08em;display:block;margin-bottom:6px}
+.form-row{display:flex;justify-content:space-between;font-size:9px;color:#cbd5e1;margin-bottom:8px}
+.log-audit-confirmed{background:#1e293b;color:#38bdf8;font-size:8px;font-weight:800;padding:4px 8px;border-radius:3px;text-align:center}
+
+/* NektBooks Styles */
+.nekt-theme{background:#fff;color:#1e293b}
+.nekt-screen{background:#fff;padding:12px}
+.liquidity-ratio-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:9px;margin-bottom:8px}
+.liquidity-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.liquidity-head strong{font-size:9.5px;color:#0f172a}
+.ratio-pct{font-size:8.5px;font-weight:800;color:#e11d48;background:#ffe4e6;padding:1px 5px;border-radius:3px}
+.cash-bar-container{height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:7px}
+.cash-bar-fill{height:100%;background:#2563eb}
+.cash-split-row{display:flex;justify-content:space-between}
+.cash-stat small{font-size:7.5px;color:#64748b;display:block}
+.cash-stat h4{font-size:12px;font-weight:900;color:#0f172a;margin:1px 0 0}
+.cash-stat.debt h4{color:#e11d48}
+.nekt-mini-invoice-preview{background:#eff6ff;border:1px solid #bfdbfe;border-radius:5px;padding:6px 9px;display:flex;align-items:center;gap:8px}
+.nekt-mini-invoice-preview strong{font-size:9.5px;color:#1e40af;display:block}
+.nekt-mini-invoice-preview small{font-size:8px;color:#3b82f6;display:block}
+.bestsellers-header{font-size:9.5px;font-weight:800;margin-bottom:6px;color:#0f172a}
+.bestsellers-list{display:flex;flex-direction:column;gap:5px}
+.seller-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;padding:5px 8px;display:flex;align-items:center;gap:8px}
+.seller-item.gold{border-left:3px solid #f59e0b}
+.seller-item.silver{border-left:3px solid #94a3b8}
+.seller-item.bronze{border-left:3px solid #b45309}
+.seller-rank{font-size:9px;font-weight:900;color:#0f172a;width:14px}
+.seller-info strong{font-size:9px;color:#0f172a;display:block}
+.seller-info small{font-size:7.5px;color:#64748b}
+.seller-price{margin-left:auto;font-size:9.5px;color:#0f172a}
+.metrics-header-line{font-size:9.5px;font-weight:800;margin-bottom:6px;color:#0f172a}
+.metrics-quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.metric-quad{background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;padding:6px}
+.metric-quad.highlight{background:#eff6ff;border-color:#bfdbfe}
+.metric-quad small{font-size:7px;color:#64748b;font-weight:700;display:block}
+.metric-quad strong{font-size:12px;color:#0f172a;display:block;margin:1px 0}
+.metric-quad span{font-size:7px;color:#94a3b8;display:block}
+
+

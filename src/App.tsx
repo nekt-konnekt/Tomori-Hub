@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowUp, Github, Mail, MessageCircle, ExternalLink } from 'lucide-react';
+import { ArrowUp, Github, Mail, MessageCircle } from 'lucide-react';
 import { INITIAL_PROJECTS, Project } from './data/projects';
 
 type Route = '/' | '/work' | '/lab' | '/ideas' | '/about';
@@ -101,7 +101,6 @@ function ProjectCard({ project, featuredCard = false }: { project: Project; feat
         <p>{project.description}</p>
         <div className="project-domain">
           {project.domain || 'Prototype / no public link'}
-          {linked && <ExternalLink size={14} strokeWidth={2.2} aria-hidden="true" />}
         </div>
       </div>
     </>
@@ -205,7 +204,7 @@ function HomeView() {
           <button className="ink-button" onClick={() => navigate('/work')}>SEE WHAT I BUILT</button>
           <a className="paper-link" href="https://wa.me/7079925455" target="_blank" rel="noreferrer">LET'S TALK</a>
         </div>
-        <span className="scribble hero-side hero-side-a">web → mobile → games</span>
+        <span className="scribble hero-side hero-side-a">web / mobile / games</span>
         <span className="scribble hero-side hero-side-b">AI-assisted</span>
       </section>
 

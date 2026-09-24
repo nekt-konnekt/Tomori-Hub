@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Project } from '../data/projects';
-import { ExternalLink, Play, RotateCcw, Check, Sparkles, Send, ShieldCheck, UserCheck, CheckCircle2, Building2, Zap, Fuel, Droplets, Trophy, Coins, FileText, CheckCircle, TrendingUp, Gauge, Flame, ShieldAlert, Award } from 'lucide-react';
+import { ExternalLink, Play, RotateCcw, Check, Sparkles, Send, ShieldCheck, UserCheck, CheckCircle2, Building2, Zap, Fuel, Droplets, Trophy, Coins, FileText, CheckCircle, TrendingUp, Gauge, Flame, ShieldAlert, Award, Feather, Heart, Share2, Tag, ChevronDown, Menu } from 'lucide-react';
 
 interface ShowcaseProps {
   project: Project;
@@ -1436,6 +1436,400 @@ export function NektBooksVisual({ large = false }: { large?: boolean }) {
   );
 }
 
+export function NotifyVisual({ large = false }: { large?: boolean }) {
+  const [tab, setTab] = useState<'hero' | 'sample' | 'features'>('hero');
+  const [tributeCount, setTributeCount] = useState<number>(142);
+  const [hasLitCandle, setHasLitCandle] = useState<boolean>(false);
+
+  return (
+    <div className={`showcase-container notify-theme ${large ? 'showcase-large' : ''}`}>
+      <div className="showcase-topbar notify-topbar">
+        <div className="showcase-dots">
+          <span className="dot red" />
+          <span className="dot yellow" />
+          <span className="dot green" />
+        </div>
+        <div className="showcase-url-pill notify-url-pill">notify.i.ng</div>
+        <div className="showcase-tab-pills notify-tab-pills">
+          <button
+            type="button"
+            className={tab === 'hero' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('hero'); }}
+          >
+            Live Site
+          </button>
+          <button
+            type="button"
+            className={tab === 'sample' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('sample'); }}
+          >
+            Sample Tribute
+          </button>
+          <button
+            type="button"
+            className={tab === 'features' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('features'); }}
+          >
+            Features
+          </button>
+        </div>
+      </div>
+
+      <div className="showcase-screen notify-screen">
+        {/* Subtle decorative leaf background graphic */}
+        <div className="notify-bg-leaf-overlay" />
+
+        {tab === 'hero' && (
+          <div className="notify-hero-flow">
+            {/* Header bar matching screenshot 1 */}
+            <div className="notify-brand-row">
+              <div className="notify-brand-block">
+                <div className="notify-leaf-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.6 8.4C6.2 17.5 7 14 9.5 11.5c2.5-2.5 6-3.3 8.9-2.9C16.6 4.8 14.5 2 12 2z" fill="#d4a359" opacity="0.9"/>
+                    <path d="M12 22c5.5 0 10-4.5 10-10 0-3.5-1.8-6.6-4.6-8.4.4 2.9-.4 6.4-2.9 8.9-2.5 2.5-6 3.3-8.9 2.9C7.4 19.2 9.5 22 12 22z" fill="#c8964d"/>
+                    <line x1="4" y1="20" x2="20" y2="4" stroke="#fef3c7" strokeWidth="1.2" opacity="0.6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="notify-brand-name">Notify.i.ng</h4>
+                  <span className="notify-kicker">ANNOUNCE. REMEMBER. HONOR</span>
+                </div>
+              </div>
+              <div className="notify-menu-btn">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+
+            {/* Headline matching screenshot 1 */}
+            <div className="notify-hero-center">
+              <h3 className="notify-headline">
+                Announce a passing.<br />
+                <em className="notify-italic-gold">Honour a life.</em> In 60 seconds.
+              </h3>
+
+              <p className="notify-body">
+                Notify.i.ng helps Nigerian families create a beautiful digital memorial, share funeral arrangements, receive tributes, and coordinate support — all in one place.
+              </p>
+
+              <div className="notify-btn-stack">
+                <button
+                  type="button"
+                  className="notify-gold-btn"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('sample'); }}
+                >
+                  CREATE A MEMORIAL — IT'S FREE
+                </button>
+                <button
+                  type="button"
+                  className="notify-outline-btn"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('sample'); }}
+                >
+                  VIEW A SAMPLE MEMORIAL
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tab === 'sample' && (
+          <div className="notify-sample-flow">
+            <div className="sample-memorial-card">
+              <div className="sample-card-head">
+                <span className="candle-icon">🕯️</span>
+                <div>
+                  <strong>Chief Emmanuel Adebayo Adeleke</strong>
+                  <small>1942 – 2026 • Patriarch of the Adeleke Family</small>
+                </div>
+              </div>
+
+              <p className="sample-card-quote">
+                “A life of service, laughter, and wisdom. Forever celebrated in the hearts of his children, grandchildren, and entire community.”
+              </p>
+
+              <div className="sample-arrangements-strip">
+                <div className="arr-detail">
+                  <small>SERVICE OF SONGS</small>
+                  <b>Friday, Oct 16 • Victoria Island, Lagos</b>
+                </div>
+                <div className="arr-detail">
+                  <small>FUNERAL THANKSGIVING</small>
+                  <b>Saturday, Oct 17 • St. John's Cathedral</b>
+                </div>
+              </div>
+
+              <div className="sample-actions-row">
+                <button
+                  type="button"
+                  className={`light-candle-btn ${hasLitCandle ? 'lit' : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (!hasLitCandle) {
+                      setTributeCount(c => c + 1);
+                      setHasLitCandle(true);
+                    }
+                  }}
+                >
+                  🕯️ {hasLitCandle ? 'Candle Lit' : 'Light a Candle'} ({tributeCount})
+                </button>
+                <span className="share-memorial-pill">
+                  <Share2 size={10} className="inline mr-1" /> Share on WhatsApp
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tab === 'features' && (
+          <div className="notify-features-flow">
+            <div className="notify-feature-card">
+              <strong>01. Instant Funeral Flyer & Web Link</strong>
+              <small>Ready in 60 seconds with order of service, maps, and reception details.</small>
+            </div>
+            <div className="notify-feature-card">
+              <strong>02. Community Condolence Book</strong>
+              <small>Friends & diaspora relatives light digital candles and write memory notes.</small>
+            </div>
+            <div className="notify-feature-card">
+              <strong>03. Family Support Coordination</strong>
+              <small>Verified bank accounts and RSVP coordination to avoid condolence chaos.</small>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="showcase-live-badge notify-badge">
+        <span className="live-dot gold-dot" /> SCREENSHOT FROM NOTIFY.I.NG
+      </div>
+    </div>
+  );
+}
+
+export function OgaAtTheTopVisual({ large = false }: { large?: boolean }) {
+  const [tab, setTab] = useState<'box' | 'feed' | 'trending'>('box');
+  const [inputText, setInputText] = useState<string>('');
+  const [isSent, setIsSent] = useState<boolean>(false);
+  const [selectedTag, setSelectedTag] = useState<string>('Anyone / General');
+
+  const sampleIdeas = [
+    'Standardized digital Danfo transit cards for all Lagos bus terminals.',
+    '24/7 solar micro-grids for Nigerian university tech hubs.',
+    'Transparent price billboard at Apapa port to stop demurrage extortion.',
+  ];
+
+  return (
+    <div className={`showcase-container oga-top-theme ${large ? 'showcase-large' : ''}`}>
+      <div className="showcase-topbar oga-top-topbar">
+        <div className="showcase-dots">
+          <span className="dot red" />
+          <span className="dot yellow" />
+          <span className="dot green" />
+        </div>
+        <div className="showcase-url-pill oga-url-pill">ogaatthe.top</div>
+        <div className="showcase-tab-pills oga-tab-pills">
+          <button
+            type="button"
+            className={tab === 'box' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('box'); }}
+          >
+            Suggestion Box
+          </button>
+          <button
+            type="button"
+            className={tab === 'feed' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('feed'); }}
+          >
+            Live Ideas
+          </button>
+          <button
+            type="button"
+            className={tab === 'trending' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTab('trending'); }}
+          >
+            Trending
+          </button>
+        </div>
+      </div>
+
+      <div className="showcase-screen oga-top-screen">
+        {/* Header matching screenshot 2 */}
+        <div className="oga-brand-row">
+          <div className="oga-brand-title">
+            <span className="oga-logo-text">oga</span>
+            <span className="oga-at-badge">@</span>
+            <span className="oga-logo-text">top</span>
+            <small className="oga-kicker">OGAATTHE.TOP</small>
+          </div>
+          <div className="oga-menu-btn">
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+
+        {tab === 'box' && (
+          <div className="oga-box-flow">
+            {/* Title with decorative slashes matching screenshot 2 */}
+            <div className="oga-headline-wrapper">
+              <span className="blue-slash left">//</span>
+              <h3 className="oga-main-headline">
+                WHAT SHOULD<br />EXIST<br />
+                <span className="oga-underline">IN NIGERIA?</span>
+              </h3>
+              <span className="blue-slash right">\\</span>
+            </div>
+
+            <p className="oga-subtext">
+              Something is on your mind. Put it in the box.<br />
+              <em className="oga-blue-link">You say it. Someone might do it.</em>
+            </p>
+
+            {/* The Suggestion Input Card matching screenshot 2 */}
+            <div className="oga-card-box">
+              <div className="oga-card-pill-handle" />
+
+              <div className="oga-card-header">
+                <strong>What's on your mind?</strong>
+                <small className="oga-card-sub">Suggestion, complaint, rant, idea, praise...</small>
+                <div className="oga-anon-pill">
+                  <span className="anon-icon">👤</span> Posting as: <b>Anonymous</b>
+                </div>
+              </div>
+
+              <div className="oga-input-container">
+                <textarea
+                  className="oga-textarea"
+                  placeholder="Drop your thoughts here. What must be fixed, built, or started in Nigeria?"
+                  value={inputText}
+                  onChange={(e) => {
+                    setInputText(e.target.value);
+                    if (isSent) setIsSent(false);
+                  }}
+                  rows={2}
+                />
+
+                {/* Pre-fill suggestion quick-chips */}
+                {!inputText && (
+                  <div className="oga-quick-chips">
+                    <span className="chip-label">Try clicking:</span>
+                    <button
+                      type="button"
+                      className="oga-quick-chip"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setInputText(sampleIdeas[0]);
+                      }}
+                    >
+                      Transit card idea
+                    </button>
+                    <button
+                      type="button"
+                      className="oga-quick-chip"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setInputText(sampleIdeas[1]);
+                      }}
+                    >
+                      Campus solar
+                    </button>
+                  </div>
+                )}
+
+                <div className="oga-card-bottom-bar">
+                  <div className="oga-tag-select">
+                    <Tag size={10} className="inline mr-1 text-slate-500" />
+                    <span>Tag: {selectedTag}</span>
+                    <ChevronDown size={10} className="inline ml-1 text-slate-400" />
+                  </div>
+
+                  <span className="oga-char-count">{inputText.length}/120</span>
+
+                  <button
+                    type="button"
+                    className="oga-send-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (inputText.trim()) {
+                        setIsSent(true);
+                      }
+                    }}
+                  >
+                    <Send size={10} className="inline mr-1" /> SEND
+                  </button>
+                </div>
+              </div>
+
+              {isSent && (
+                <div className="oga-sent-toast">
+                  ✓ Received! Broadcasted to Nigerian builders & policy leaders.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {tab === 'feed' && (
+          <div className="oga-feed-flow">
+            <div className="oga-feed-item">
+              <div className="feed-head">
+                <span className="feed-tag">AGRICULTURE</span>
+                <span className="feed-upvotes">▲ 84 UPVOTES</span>
+              </div>
+              <p>“Affordable solar cold-rooms at Mile 12 market to prevent 40% tomato harvest waste every week.”</p>
+              <small>Posted by Anonymous • 2h ago</small>
+            </div>
+
+            <div className="oga-feed-item">
+              <div className="feed-head">
+                <span className="feed-tag tech">TECH & CIVIC</span>
+                <span className="feed-upvotes">▲ 62 UPVOTES</span>
+              </div>
+              <p>“One unified API for verifying electricity meter recharge across all 11 Nigerian DisCos.”</p>
+              <small>Posted by Anonymous • 4h ago</small>
+            </div>
+          </div>
+        )}
+
+        {tab === 'trending' && (
+          <div className="oga-trending-flow">
+            <div className="trending-topic-tile">
+              <span className="trend-num">#1</span>
+              <div>
+                <strong>Lagos Transport & Bus Terminals</strong>
+                <small>148 suggestions submitted</small>
+              </div>
+            </div>
+            <div className="trending-topic-tile">
+              <span className="trend-num">#2</span>
+              <div>
+                <strong>Reliable Grid & Solar Net Metering</strong>
+                <small>112 suggestions submitted</small>
+              </div>
+            </div>
+            <div className="trending-topic-tile">
+              <span className="trend-num">#3</span>
+              <div>
+                <strong>Passport & ID Renewal Delivery</strong>
+                <small>89 suggestions submitted</small>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="showcase-live-badge oga-badge">
+        <span className="live-dot blue-dot" /> SCREENSHOT FROM OGAATTHE.TOP
+      </div>
+    </div>
+  );
+}
+
 export function ProjectShowcaseVisual({ project, large = false }: ShowcaseProps) {
   if (project.slug === 'iyali') {
     return <IyaliVisual large={large} />;
@@ -1463,6 +1857,12 @@ export function ProjectShowcaseVisual({ project, large = false }: ShowcaseProps)
   }
   if (project.slug === 'nektbooks') {
     return <NektBooksVisual large={large} />;
+  }
+  if (project.slug === 'notify') {
+    return <NotifyVisual large={large} />;
+  }
+  if (project.slug === 'oga-at-dtop') {
+    return <OgaAtTheTopVisual large={large} />;
   }
   return null;
 }

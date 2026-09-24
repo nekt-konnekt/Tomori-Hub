@@ -41,6 +41,8 @@ const SHOWCASE_SLUGS = [
   'trustlink',
   'dieselguard',
   'nektbooks',
+  'notify',
+  'oga-at-dtop',
 ];
 
 function navigate(path: string) {

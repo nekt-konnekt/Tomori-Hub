@@ -4,8 +4,9 @@ import { INITIAL_PROJECTS, Project } from './data/projects';
 import { SEOHead } from './components/SEOHead';
 import { StackIcon } from './components/StackIcons';
 import { ProjectShowcaseVisual } from './components/ProjectShowcaseVisuals';
+import { ThinkingView } from './components/ThinkingView';
 
-type Route = '/' | '/work' | '/lab' | '/ideas' | '/about';
+type Route = '/' | '/work' | '/lab' | '/ideas' | '/thinking' | '/about';
 
 const accentFor: Record<string, string> = {
   ibere: 'yellow',
@@ -166,6 +167,7 @@ function SiteHeader({ path }: { path: string }) {
     ['/work', 'WORK'],
     ['/lab', 'LAB'],
     ['/ideas', 'IDEAS'],
+    ['/thinking', 'THINKING'],
     ['/about', 'ABOUT'],
   ];
   return (
@@ -558,11 +560,11 @@ function ProjectDetailView({ project }: { project: Project }) {
 function App() {
   const path = usePath();
   const project = path.startsWith('/work/') ? getProject(path.split('/')[2]) : undefined;
-  const route = (['/', '/work', '/lab', '/ideas', '/about'] as string[]).includes(path) ? path as Route : '/';
+  const route = (['/', '/work', '/lab', '/ideas', '/thinking', '/about'] as string[]).includes(path) ? path as Route : '/';
   return (
     <>
       <SiteHeader path={route} />
-      <main>{project ? <ProjectDetailView project={project} /> : route === '/' ? <HomeView /> : route === '/work' ? <WorkView /> : route === '/lab' ? <LabView /> : route === '/ideas' ? <IdeasView /> : <AboutView />}</main>
+      <main>{project ? <ProjectDetailView project={project} /> : route === '/' ? <HomeView /> : route === '/work' ? <WorkView /> : route === '/lab' ? <LabView /> : route === '/ideas' ? <IdeasView /> : route === '/thinking' ? <ThinkingView /> : <AboutView />}</main>
       <Footer />
       <FloatingControls />
     </>

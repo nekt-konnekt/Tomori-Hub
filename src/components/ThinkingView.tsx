@@ -1,6 +1,8 @@
 import React from 'react';
 import { SEOHead } from './SEOHead';
-import { PaperTag } from './PaperTag';
+function PaperTag({ children, tone = 'yellow', rotate = 0 }: { children: React.ReactNode; tone?: string; rotate?: number }) {
+  return <span className={`paper-tag tone-${tone}`} style={{ transform: `rotate(${rotate}deg)` }}>{children}</span>;
+}
 
 const cases = [
   {

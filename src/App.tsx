@@ -5,10 +5,12 @@ import { SEOHead } from './components/SEOHead';
 import { StackIcon } from './components/StackIcons';
 import { ProjectShowcaseVisual } from './components/ProjectShowcaseVisuals';
 import { ThinkingView } from './components/ThinkingView';
+import { PUCaptainDemo } from './views/PUCaptainDemo';
 
 type Route = '/' | '/work' | '/lab' | '/ideas' | '/thinking' | '/about';
 
 const accentFor: Record<string, string> = {
+  'pu-captain': 'green',
   ibere: 'yellow',
   agba: 'turquoise',
   iyali: 'pink',
@@ -120,6 +122,7 @@ function ProjectVisual({ project, large = false }: { project: Project; large?: b
 
 function ProjectCard({ project, featuredCard = false }: { project: Project; featuredCard?: boolean }) {
   const linked = Boolean(project.url);
+  const internalDemo = project.slug === 'pu-captain';
   const content = (
     <>
       <ProjectVisual project={project} large={featuredCard} />
@@ -139,7 +142,12 @@ function ProjectCard({ project, featuredCard = false }: { project: Project; feat
 
   if (linked) {
     return (
-      <a className={`project-card ${featuredCard ? 'project-card-featured' : ''}`} href={project.url!} target="_blank" rel="noreferrer">
+      <a
+        className={`project-card ${featuredCard ? 'project-card-featured' : ''}`}
+        href={internalDemo ? `/work/${project.slug}` : project.url!}
+        target={internalDemo ? undefined : "_blank"}
+        rel={internalDemo ? undefined : "noreferrer"}
+      >
         {content}
       </a>
     );
@@ -564,7 +572,7 @@ function App() {
   return (
     <>
       <SiteHeader path={route} />
-      <main>{project ? <ProjectDetailView project={project} /> : route === '/' ? <HomeView /> : route === '/work' ? <WorkView /> : route === '/lab' ? <LabView /> : route === '/ideas' ? <IdeasView /> : route === '/thinking' ? <ThinkingView /> : <AboutView />}</main>
+      <main>{project ? (project.slug === 'pu-captain' ? <PUCaptainDemo /> : <ProjectDetailView project={project} />) : route === '/' ? <HomeView /> : route === '/work' ? <WorkView /> : route === '/lab' ? <LabView /> : route === '/ideas' ? <IdeasView /> : route === '/thinking' ? <ThinkingView /> : <AboutView />}</main>
       <Footer />
       <FloatingControls />
     </>

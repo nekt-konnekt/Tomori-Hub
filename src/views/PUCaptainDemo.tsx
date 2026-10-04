@@ -7,6 +7,7 @@ const slides = [
   { id: 'solution', label: 'Solution' },
   { id: 'features', label: 'Features' },
   { id: 'roadmap', label: 'Roadmap' },
+  { id: 'integrity', label: 'Integrity' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -142,9 +143,32 @@ export const PUCaptainDemo: React.FC = () => {
         </div>
       </section>
 
+      <section className="pu-slide pu-integrity" data-pu-slide>
+        <div className="pu-inner">
+          <span className="pu-section-no pu-section-no-light">05 / ELECTION DAY + POST-ELECTION</span>
+          <h2>Integrity &amp; Monitoring.</h2>
+          <div className="pu-integrity-intro">
+            <div>
+              <h3>Real-Time Polling Unit Result Aggregator</h3>
+              <p>Manual collation is slow and difficult to independently verify. PU Captain adds a secure evidence layer from the polling unit to the collation process.</p>
+            </div>
+            <div className="pu-integrity-badge">EC8A / FIELD EVIDENCE</div>
+          </div>
+          <div className="pu-integrity-grid">
+            <article><span>01</span><div><h3>EC8A photo capture</h3><p>Party agents and Captains upload result-sheet photos directly from the polling unit.</p></div></article>
+            <article><span>02</span><div><h3>OCR verification</h3><p>Optical Character Recognition reads the numbers from captured result sheets for structured comparison.</p></div></article>
+            <article><span>03</span><div><h3>Geo-fencing</h3><p>Verify that the submission originates from the assigned polling-unit location.</p></div></article>
+            <article><span>04</span><div><h3>Timestamped evidence</h3><p>Every submission carries a timestamp to preserve an auditable sequence of field events.</p></div></article>
+            <article><span>05</span><div><h3>Official-result comparison</h3><p>Compare captured figures against the official INEC portal data when available.</p></div></article>
+            <article><span>06</span><div><h3>Discrepancy alerts</h3><p>Flag material differences when they cross a configured threshold for review.</p></div></article>
+          </div>
+          <div className="pu-integrity-flow">CAPTURE → VERIFY → COMPARE → ALERT</div>
+        </div>
+      </section>
+
       <section className="pu-slide pu-light pu-contact" data-pu-slide>
         <div className="pu-contact-card">
-          <span className="pu-section-no">05 / DEPLOYMENT</span>
+          <span className="pu-section-no">06 / DEPLOYMENT</span>
           <h2>Ready to deploy?</h2>
           <p>Turn abstract campaign support into measurable, actionable field data.</p>
           <div className="pu-contact-grid">
